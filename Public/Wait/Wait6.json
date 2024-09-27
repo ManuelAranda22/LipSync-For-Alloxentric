@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "soundFile": "C:\\Alloxentric\\LIPSYNC\\Lipsync\\public\\audio\\audio_20240905_080015.wav",
+    "duration": 3.06
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.38, "value": "X" },
+    { "start": 0.38, "end": 0.42, "value": "B" },
+    { "start": 0.42, "end": 0.67, "value": "F" },
+    { "start": 0.67, "end": 0.74, "value": "B" },
+    { "start": 0.74, "end": 1.09, "value": "C" },
+    { "start": 1.09, "end": 1.16, "value": "B" },
+    { "start": 1.16, "end": 1.47, "value": "X" },
+    { "start": 1.47, "end": 1.65, "value": "B" },
+    { "start": 1.65, "end": 1.79, "value": "G" },
+    { "start": 1.79, "end": 1.86, "value": "C" },
+    { "start": 1.86, "end": 2.07, "value": "B" },
+    { "start": 2.07, "end": 2.14, "value": "C" },
+    { "start": 2.14, "end": 2.28, "value": "E" },
+    { "start": 2.28, "end": 3.06, "value": "X" }
+  ]
+}

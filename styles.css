@@ -1,0 +1,330 @@
+body {
+    background-color: #dedede;
+    color: #333333;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 200px;
+    background: linear-gradient(to bottom, #57cd86, #87CEFA);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+#sidebar.retracted {
+    transform: translateX(-180px);
+}
+
+#sidebar-toggle {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    background: #57cd86;
+    border: none;
+    color: white;
+    padding: 20px 15px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+#sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#sidebar a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 10px 0;
+    display: block;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
+#main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 200px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+#main-content.expanded {
+    margin-left: 20px;
+}
+
+#avatar-container {
+    width: 300px;
+    height: 450px;
+    margin-bottom: 20px;
+}
+
+#avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#logo {
+    width: 120px;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+#menu-container {
+    margin-top: 20px;
+}
+
+#input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#text-input {
+    width: 600px;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #cccccc;
+    margin-right: 10px;
+}
+
+#send-button,
+#mic-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(to bottom, #57cd86, #87CEFA);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#send-button i,
+#mic-button i {
+    font-size: 20px;
+}
+
+#send-button:hover,
+#mic-button:hover {
+    background: linear-gradient(to bottom, #4ab575, #75b9e7);
+}
+
+#send-button {
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Asegúrate de que el spinner esté por encima de otros elementos */
+}
+
+
+#history-button {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background: #57cd86;
+    border: none;
+    color: white;
+    padding: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#history-panel {
+    position: fixed;
+    top: 0;
+    right: -440px;
+    width: 400px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#history-panel.open {
+    right: 0;
+}
+
+#conversation-history {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.chat-message.user {
+    background-color: #dcf8c6;
+    text-align: right;
+}
+
+.chat-message.bot {
+    background-color: #ececec;
+    text-align: left;
+}
+
+
+audio {
+    display: none;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.5em;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#model-response {
+    width: 80%;
+    max-width: 400px;
+    min-height: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+#agent-maker-content label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+#agent-maker-content input[type="text"],
+#agent-maker-content input[type="file"],
+#agent-maker-content select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#avatar-selection {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+#agent-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#create-button,
+#test-button {
+    width: 45%;
+    padding: 10px;
+    background-color: #57cd86;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#create-button:hover,
+#test-button:hover {
+    background-color: #4ab575;
+}
+
+
+
+
+.interact-button {
+    display: block !important;
+    margin: 20px auto !important;
+    padding: 10px 20px !important;
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    font-size: 16px !important;
+}
+
+.interact-button:hover {
+    background-color: #0056b3 !important;
+}
+
+#text-container {
+    position: relative;
+    height: 60px; 
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#speech-text {
+    font-size: 14px; 
+    line-height: 1.4;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#speech-text.visible {
+    opacity: 1;
+}
+
+
+

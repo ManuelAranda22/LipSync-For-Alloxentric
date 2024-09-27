@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "soundFile": "C:\\Alloxentric\\LIPSYNC\\Lipsync\\public\\audio\\audio_20240905_075612.wav",
+    "duration": 3.98
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.46, "value": "X" },
+    { "start": 0.46, "end": 0.52, "value": "B" },
+    { "start": 0.52, "end": 0.72, "value": "C" },
+    { "start": 0.72, "end": 0.80, "value": "A" },
+    { "start": 0.80, "end": 0.84, "value": "C" },
+    { "start": 0.84, "end": 0.88, "value": "B" },
+    { "start": 0.88, "end": 0.99, "value": "A" },
+    { "start": 0.99, "end": 1.26, "value": "B" },
+    { "start": 1.26, "end": 1.40, "value": "F" },
+    { "start": 1.40, "end": 1.47, "value": "B" },
+    { "start": 1.47, "end": 1.61, "value": "C" },
+    { "start": 1.61, "end": 1.68, "value": "H" },
+    { "start": 1.68, "end": 1.89, "value": "X" },
+    { "start": 1.89, "end": 1.93, "value": "B" },
+    { "start": 1.93, "end": 2.11, "value": "C" },
+    { "start": 2.11, "end": 2.25, "value": "B" },
+    { "start": 2.25, "end": 2.37, "value": "A" },
+    { "start": 2.37, "end": 2.48, "value": "B" },
+    { "start": 2.48, "end": 2.62, "value": "C" },
+    { "start": 2.62, "end": 2.76, "value": "B" },
+    { "start": 2.76, "end": 3.13, "value": "X" },
+    { "start": 3.13, "end": 3.49, "value": "B" },
+    { "start": 3.49, "end": 3.98, "value": "X" }
+  ]
+}
